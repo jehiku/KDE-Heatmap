@@ -417,7 +417,6 @@ if df is not None:
                 return f'#{r:02x}{g:02x}{b:02x}'
 
             # Add color scale legend
-            # Add color scale legend
             legend_html = f"""
             <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: white; 
             padding: 10px; border: 2px solid grey; border-radius: 5px; font-size: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
@@ -442,7 +441,6 @@ if df is not None:
                 </div>
             </div>
             """
-m.get_root().html.add_child(folium.Element(legend_html))
             m.get_root().html.add_child(folium.Element(legend_html))
 
             # Sort the DataFrame by imbalance_ratio in ascending order for drawing order
