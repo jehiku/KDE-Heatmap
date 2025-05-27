@@ -417,21 +417,22 @@ if df is not None:
                 return f'#{r:02x}{g:02x}{b:02x}'
 
             # Add color scale legend
+            # Add color scale legend
             legend_html = f"""
             <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: white; 
-            padding: 15px; border: 2px solid grey; border-radius: 5px; font-size: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-                <p style="margin: 0 0 10px 0; font-size: 14px; font-weight: bold;">Service Balance Scale (Markers)</p>
-                <div style="display: flex; flex-direction: column; gap: 5px;">
+            padding: 10px; border: 2px solid grey; border-radius: 5px; font-size: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+                <p style="margin: 0 0 8px 0; font-size: 11px; font-weight: bold;">Service Balance Scale (Markers)</p>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
                     <div style="display: flex; align-items: center;">
-                        <div style="width: 150px; height: 15px; background: linear-gradient(to right, 
-                            #c8e6c9, #4db6ac, #004d40); margin-right: 10px;"></div>
+                        <div style="width: 120px; height: 12px; background: linear-gradient(to right, 
+                            #c8e6c9, #4db6ac, #004d40); margin-right: 8px;"></div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; width: 150px;">
+                    <div style="display: flex; justify-content: space-between; width: 120px;">
                         <span style="color: #c8e6c9;">Overserved</span>
                         <span style="color: #4db6ac;">Balanced</span>
                         <span style="color: #004d40;">Underserved</span>
                     </div>
-                    <div style="margin-top: 5px; font-size: 11px; color: #666;">
+                    <div style="margin-top: 4px; font-size: 9px; color: #666;">
                         <p style="margin: 0;">• Color intensity indicates degree of imbalance</p>
                         <p style="margin: 0;">• Light colors = Overserved (more supply than demand)</p>
                         <p style="margin: 0;">• Medium colors = Balanced (near zero imbalance)</p>
@@ -441,6 +442,7 @@ if df is not None:
                 </div>
             </div>
             """
+m.get_root().html.add_child(folium.Element(legend_html))
             m.get_root().html.add_child(folium.Element(legend_html))
 
             # Sort the DataFrame by imbalance_ratio in ascending order for drawing order
