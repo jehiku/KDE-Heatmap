@@ -6,3 +6,4 @@ numpy
 pyproj
 scipy
 plotly
+scikit-learn==1.3.2  # <-- This provides 'sklearn'
